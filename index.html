@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aqsa Farooq — Frontend Developer and Software Engineering student building responsive, modern web applications. Currently looking for a frontend/web developer internship.">
+    <meta name="description"
+        content="Aqsa Farooq — Frontend Developer and Software Engineering student building responsive, modern web applications. Currently looking for a frontend/web developer internship.">
 
     <title>Aqsa Farooq | Frontend Developer</title>
 
@@ -326,7 +327,8 @@
 
                 <div class="project-buttons">
 
-                    <a href="https://skillbridge-internship-career-porta.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
+                    <a href="https://skillbridge-internship-career-porta.vercel.app/" target="_blank"
+                        rel="noopener noreferrer" class="btn">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                         Live Demo
                     </a>
@@ -366,7 +368,8 @@
 
                     <div class="project-buttons">
 
-                        <a href="https://flower-shop-website-three.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
+                        <a href="https://flower-shop-website-three.vercel.app/" target="_blank"
+                            rel="noopener noreferrer" class="btn">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             Live Demo
                         </a>
@@ -444,7 +447,8 @@
 
                     <div class="project-buttons">
 
-                        <a href="https://skillbridge-internship-career-porta.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">
+                        <a href="https://skillbridge-internship-career-porta.vercel.app/" target="_blank"
+                            rel="noopener noreferrer" class="btn">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i>
                             Live Demo
                         </a>
@@ -494,8 +498,8 @@
 
                 <!-- LinkedIn -->
 
-                <a href="https://www.linkedin.com/in/aqsa-farooq-b3b3aa417"
-                    target="_blank" rel="noopener noreferrer" class="contact-card reveal">
+                <a href="https://www.linkedin.com/in/aqsa-farooq-b3b3aa417" target="_blank" rel="noopener noreferrer"
+                    class="contact-card reveal">
 
                     <i class="fa-brands fa-linkedin"></i>
 
@@ -507,7 +511,8 @@
 
                 <!-- GitHub -->
 
-                <a href="https://github.com/Aqsa-Farooq24" target="_blank" rel="noopener noreferrer" class="contact-card reveal">
+                <a href="https://github.com/Aqsa-Farooq24" target="_blank" rel="noopener noreferrer"
+                    class="contact-card reveal">
 
                     <i class="fa-brands fa-github"></i>
 
@@ -528,6 +533,43 @@
                     <p>Download CV</p>
 
                 </a>
+
+            </div>
+            <!-- Message Button -->
+
+            <div class="message-btn-wrapper reveal">
+
+                <button type="button" id="open-form-btn">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Send Me a Message</span>
+                </button>
+
+            </div>
+
+
+            <!-- Hidden Contact Form -->
+
+            <div class="contact-form reveal" id="contact-form-box">
+
+               <h3>Send Me a Message</h3>
+                <form id="contact-form">
+
+                    <input type="text" name="name" id="name" placeholder="Your Name">
+
+                    <input type="email" name="email" id="email" placeholder="example@gmail.com">
+
+                    <textarea name="message" id="message" placeholder="Your Message"></textarea>
+
+
+                    <p id="form-error"></p>
+                    <p id="form-success"></p>
+
+                    <button type="submit" id="send-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        <span>Send Message</span>
+                    </button>
+
+                </form>
 
             </div>
 
@@ -592,8 +634,8 @@
                         </li>
 
                         <li>
-                            <a href="https://www.linkedin.com/in/aqsa-farooq-b3b3aa417"
-                                target="_blank" rel="noopener noreferrer">
+                            <a href="https://www.linkedin.com/in/aqsa-farooq-b3b3aa417" target="_blank"
+                                rel="noopener noreferrer">
                                 <i class="fa-brands fa-linkedin"></i> LinkedIn
                             </a>
                         </li>
@@ -627,6 +669,7 @@
         </div>
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="script.js"></script>
 
 </body>

@@ -1,3 +1,8 @@
+emailjs.init({
+    publicKey: "9SPfUJkouHr0sBbPY",
+});
+
+
 // ===== MOBILE MENU TOGGLE =====
 const menuToggle = document.querySelector(".menu-toggle");
 const navLinks = document.querySelector(".nav-links");
@@ -80,3 +85,98 @@ const yearEl = document.getElementById("year");
 if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
 }
+
+//==contact form button==
+const openFormBtn = document.getElementById("open-form-btn");
+const formBox = document.getElementById("contact-form-box");
+const contactForm = document.getElementById("contact-form");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const messageInput = document.getElementById("message");
+const errorMsg = document.getElementById("form-error");
+const sendBtn = document.getElementById("send-btn");
+const sendBtnText = sendBtn.querySelector("span");
+const successMsg = document.getElementById("form-success");
+
+openFormBtn.addEventListener("click", function () {
+
+    formBox.style.display = "block";
+
+    openFormBtn.style.display = "none";
+
+});
+
+contactForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+
+    if (
+        nameInput.value.trim() === "" ||
+        emailInput.value.trim() === "" ||
+        messageInput.value.trim() === ""
+    ) {
+
+        if (errorMsg) {
+            errorMsg.style.display = "block";
+            errorMsg.textContent = "Please fill all fields before sending !";
+        }
+
+        return;
+    }
+
+    if (errorMsg) {
+        errorMsg.style.display = "none";
+        errorMsg.textContent = "";
+    }
+
+    if (successMsg) {
+        successMsg.style.display = "none";
+        successMsg.textContent = "";
+    }
+
+    sendBtn.disabled = true;
+    sendBtnText.textContent = "Sending...";
+    emailjs.sendForm(
+        "service_qirxxsx",
+        "template_3ifxi6a",
+        this
+    )
+        .then(() => {
+
+            if (successMsg) {
+                successMsg.style.display = "block";
+                successMsg.textContent = "Thank you! Your message has been sent successfully.";
+            }
+
+            contactForm.reset();
+
+            sendBtn.disabled = false;
+            sendBtnText.textContent = "Send Message";
+
+            setTimeout(() => {
+
+                formBox.style.display = "none";
+
+                openFormBtn.style.display = "inline-flex";
+
+                if (successMsg) {
+                    successMsg.style.display = "none";
+                }
+
+            }, 2000);
+
+        })
+        .catch(() => {
+
+            sendBtn.disabled = false;
+            sendBtnText.textContent = "Send Message";
+
+            if (errorMsg) {
+                errorMsg.style.display = "block";
+                errorMsg.textContent = "Something went wrong. Please try again.";
+            }
+
+        });
+
+});
