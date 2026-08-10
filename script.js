@@ -111,17 +111,32 @@ contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
 
-    if (
-        nameInput.value.trim() === "" ||
-        emailInput.value.trim() === "" ||
-        messageInput.value.trim() === ""
-    ) {
+    const nameValue = nameInput.value.trim();
+    const emailValue = emailInput.value.trim();
+    const messageValue = messageInput.value.trim();
+    const namePattern = /^[A-Za-zÀ-ÿ\s'-]+$/;
 
+    if (!nameValue || !emailValue || !messageValue) {
         if (errorMsg) {
             errorMsg.style.display = "block";
-            errorMsg.textContent = "Please fill all fields before sending !";
+            errorMsg.textContent = "Please fill all fields before sending!";
         }
+        return;
+    }
 
+    if (!namePattern.test(nameValue)) {
+        if (errorMsg) {
+            errorMsg.style.display = "block";
+            errorMsg.textContent = "Please enter a valid name using letters only.";
+        }
+        return;
+    }
+
+    if (!emailInput.checkValidity()) {
+        if (errorMsg) {
+            errorMsg.style.display = "block";
+            errorMsg.textContent = "Please enter a valid email address.";
+        }
         return;
     }
 
